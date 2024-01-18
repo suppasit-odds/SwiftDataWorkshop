@@ -35,9 +35,6 @@ struct ContentView: View {
                             }
                         }
                     }
-                    .navigationDestination(for: Restuarant.self) { restuarant in
-                        EditRestualrantView(restuarant: restuarant)
-                    }
                 }
                 .onDelete { indexSet in
                     for item in indexSet {
@@ -46,19 +43,16 @@ struct ContentView: View {
                     }
                 }
             }
+            .navigationDestination(for: Restuarant.self) { restuarant in
+                EditRestualrantView(restuarant: restuarant)
+            }
             .toolbar {
-                /*
-                 • Thyme Square 
-                 • Pasta la Vista
-                 • Life of Pie
-                 • Lord of the Wings
-                 */
                 ToolbarItemGroup {
                     Button("Add Sample") {
-                        let workThisWay = Restuarant(name: "Work this way", price: 100, quality: 5, speedRating: 5)
-                        let pasta = Restuarant(name: "Pasta la Vista", price: 70, quality: 5, speedRating: 3)
-                        let lifeOfPie = Restuarant(name: "Life of Pie", price: 60, quality: 7, speedRating: 5)
-                        let lordOfWings = Restuarant(name: "Lord of the Wings", price: 166, quality: 3, speedRating: 5)
+                        let workThisWay = Restuarant(name: "Work this way", price: 9, quality: 5, speedRating: 5)
+                        let pasta = Restuarant(name: "Pasta la Vista", price: 7, quality: 5, speedRating: 3)
+                        let lifeOfPie = Restuarant(name: "Life of Pie", price: 6, quality: 7, speedRating: 5)
+                        let lordOfWings = Restuarant(name: "Lord of the Wings", price: 9, quality: 3, speedRating: 5)
                         modelContext.insert(workThisWay)
                         modelContext.insert(pasta)
                         modelContext.insert(lifeOfPie)
@@ -77,7 +71,6 @@ struct ContentView: View {
 }
 
 #Preview {
-//    ContentView()
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
     let containter = try! ModelContainer(for: Restuarant.self, configurations: config)
     let example = Restuarant(name: "Work this way", price: 100, quality: 5, speedRating: 5)
