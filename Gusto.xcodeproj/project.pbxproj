@@ -13,6 +13,7 @@
 		B4214FF52B58BC4E00A4E29F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4214FF42B58BC4E00A4E29F /* Preview Assets.xcassets */; };
 		B4214FFE2B58BDB300A4E29F /* Restuarant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4214FFD2B58BDB300A4E29F /* Restuarant.swift */; };
 		B42150002B58C94100A4E29F /* EditRestualrantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4214FFF2B58C94100A4E29F /* EditRestualrantView.swift */; };
+		B42150022B58D6F300A4E29F /* AddRestuarantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42150012B58D6F300A4E29F /* AddRestuarantView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		B4214FF42B58BC4E00A4E29F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B4214FFD2B58BDB300A4E29F /* Restuarant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restuarant.swift; sourceTree = "<group>"; };
 		B4214FFF2B58C94100A4E29F /* EditRestualrantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRestualrantView.swift; sourceTree = "<group>"; };
+		B42150012B58D6F300A4E29F /* AddRestuarantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestuarantView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				B4214FEF2B58BC4D00A4E29F /* ContentView.swift */,
 				B4214FFD2B58BDB300A4E29F /* Restuarant.swift */,
 				B4214FFF2B58C94100A4E29F /* EditRestualrantView.swift */,
+				B42150012B58D6F300A4E29F /* AddRestuarantView.swift */,
 				B4214FF12B58BC4E00A4E29F /* Assets.xcassets */,
 				B4214FF32B58BC4E00A4E29F /* Preview Content */,
 			);
@@ -147,6 +150,7 @@
 				B4214FF02B58BC4D00A4E29F /* ContentView.swift in Sources */,
 				B42150002B58C94100A4E29F /* EditRestualrantView.swift in Sources */,
 				B4214FEE2B58BC4D00A4E29F /* GustoApp.swift in Sources */,
+				B42150022B58D6F300A4E29F /* AddRestuarantView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

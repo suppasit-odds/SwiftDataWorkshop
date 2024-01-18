@@ -11,10 +11,10 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) var modelContext
     @Query var restuarants: [Restuarant]
+    @State var path = [Restuarant]()
     
     var body: some View {
-        
-        NavigationStack {
+        NavigationStack(path: $path) {
             List {
                 ForEach(restuarants) { restuarant in
                     NavigationLink(value: restuarant) {
@@ -54,7 +54,7 @@ struct ContentView: View {
                  • Lord of the Wings
                  */
                 ToolbarItemGroup {
-                    Button("Add") {
+                    Button("Add Sample") {
                         let workThisWay = Restuarant(name: "Work this way", price: 100, quality: 5, speedRating: 5)
                         let pasta = Restuarant(name: "Pasta la Vista", price: 70, quality: 5, speedRating: 3)
                         let lifeOfPie = Restuarant(name: "Life of Pie", price: 60, quality: 7, speedRating: 5)
@@ -63,6 +63,12 @@ struct ContentView: View {
                         modelContext.insert(pasta)
                         modelContext.insert(lifeOfPie)
                         modelContext.insert(lordOfWings)
+                    }
+                    Spacer()
+                    Button("Add") {
+                        let restuarant = Restuarant(name: "", price: 1, quality: 1, speedRating: 1)
+                        modelContext.insert(restuarant)
+                        path.append(restuarant)
                     }
                 }
             }
