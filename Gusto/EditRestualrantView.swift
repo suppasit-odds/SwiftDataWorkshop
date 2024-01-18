@@ -9,10 +9,27 @@ import SwiftUI
 import SwiftData
 
 struct EditRestualrantView: View {
-    var restuarant: Restuarant
+    @Bindable var restuarant: Restuarant
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            TextField("Name fo restuarant", text: $restuarant.name)
+            Picker("Price", selection: $restuarant.price) {
+                ForEach(1..<10) {
+                    Text("\($0)").tag($0)
+                }
+            }
+            Picker("Quality", selection: $restuarant.quality) {
+                ForEach(1..<6) {
+                    Text("\($0)").tag($0)
+                }
+            }
+            Picker("Speed Rating", selection: $restuarant.speedRating) {
+                ForEach(1..<6) {
+                    Text("\($0)").tag($0)
+                }
+            }
+        }
     }
 }
 

@@ -17,22 +17,26 @@ struct ContentView: View {
         NavigationStack {
             List {
                 ForEach(restuarants) { restuarant in
-//                    NavigationLink(value: <#T##(Decodable & Encodable & Hashable)?#>, label: <#T##() -> _#>)
-                    VStack(alignment: .leading) {
-                        HStack(alignment: .top) {
-                            Text("\(restuarant.name)")
-                            Spacer()
+                    NavigationLink(value: restuarant) {
+                        VStack(alignment: .leading) {
+                            HStack(alignment: .top) {
+                                Text("\(restuarant.name)")
+                                Spacer()
+                            }
+                            HStack(alignment: .top) {
+                                Text("price: \(restuarant.price)")
+                                    .font(.caption)
+                                Text("quality: \(restuarant.quality)")
+                                    .font(.caption)
+                                Text("speed: \(restuarant.speedRating)")
+                                    .font(.caption)
+                                Text("avg: \(restuarant.average)")
+                                    .font(.caption)
+                            }
                         }
-                        HStack(alignment: .top) {
-                            Text("price: \(restuarant.price)")
-                                .font(.caption)
-                            Text("quality: \(restuarant.quality)")
-                                .font(.caption)
-                            Text("speed: \(restuarant.speedRating)")
-                                .font(.caption)
-                            Text("avg: \(restuarant.average)")
-                                .font(.caption)
-                        }
+                    }
+                    .navigationDestination(for: Restuarant.self) { restuarant in
+                        EditRestualrantView(restuarant: restuarant)
                     }
                 }
                 .onDelete { indexSet in
